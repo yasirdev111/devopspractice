@@ -4,6 +4,8 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt update
 sudo apt install docker.io -y
+sudo usermod -aG docker $USER
+newgrp docker
 [ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.27.0/kind-linux-amd64
 sudo chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
